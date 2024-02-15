@@ -2,7 +2,7 @@
   "name": "@crossroad-venture-studio/crossroad-codebase",
   "version": "1.0.0",
   "author": "William Brendel",
-  "description": "Crossroad framework",
+  "description": "Crossroad utilities codebase",
   "bugs": {
     "url": "https://github.com/npm/npm/issues"
   },
@@ -12,6 +12,10 @@
     "crossroad",
     "framework",
     "fullstack",
+    "utils",
+    "utilites",
+    "codebase",
+    "code",
     "pwa",
     "progressive",
     "web",
