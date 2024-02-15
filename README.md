@@ -1,4 +1,4 @@
-![Crossroad logo](https://github.com/Crossroad-Venture-Studio/Assets/__assets__/crossroad.svg)
+![Crossroad logo](https://rawgithub.com/Crossroad-Venture-Studio/Assets/__assets__/crossroad.svg)
 # *Crossroad Venture Studio:* General Utilities Codebase
 
 [Crossroad Venture Studio](crossroadventurestudio.com) is a company focused on creating and building startups. We typically help startups by providing an initial team, strategic direction, and operational support. Contrary to incubators, accelerators and other investment entities, the main added value is on execution rather than financial help.
