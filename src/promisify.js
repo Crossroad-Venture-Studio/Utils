@@ -54,10 +54,11 @@ const promisify = (
 );
 
 // Exports.
-Object.defineProperty(promisify, 'promisify', {
+export default Object.freeze(Object.defineProperty(promisify, 'promisify', {
   value: promisify
-});
+}));
+
+// Node.js exports.
 try {
   module.exports = promisify;
 } catch {}
-export default promisify;

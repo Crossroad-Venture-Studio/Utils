@@ -1,12 +1,14 @@
 "use strict";
 
+// Helper function to get the clock.
 const clock = () => performance.now();
 
 // Exports.
-Object.defineProperty(clock, 'clock', {
+export default Object.freeze(Object.defineProperty(clock, 'clock', {
   value: clock
-});
+}));
+
+// Node.js exports.
 try {
   module.exports = clock;
 } catch {}
-export default Object.freeze(clock);

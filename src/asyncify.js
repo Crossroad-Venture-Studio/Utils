@@ -9,10 +9,11 @@ const asyncify = func => (
 );
 
 // Exports.
-Object.defineProperty(asyncify, 'asyncify', {
+export default Object.freeze(Object.defineProperty(asyncify, 'asyncify', {
   value: asyncify
-});
+}));
+
+// Node.js exports.
 try {
   module.exports = asyncify;
 } catch {}
-export default Object.freeze(asyncify);

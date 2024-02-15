@@ -27,13 +27,14 @@ const throttle = (
 ) || func;
 
 // Exports.
-Object.defineProperty(throttle, 'throttle', {
-  value: throttle
-});
 Object.defineProperty(throttle, 'DEFAULT_DELAY', {
   value: DEFAULT_DELAY
 });
+export default Object.freeze(Object.defineProperty(throttle, 'throttle', {
+  value: throttle
+}));
+
+// Node.js exports.
 try {
   module.exports = throttle;
 } catch {}
-export default throttle;
