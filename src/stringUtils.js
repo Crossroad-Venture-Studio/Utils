@@ -6,7 +6,7 @@ String.toCamelCase || Object.defineProperty(String, 'toCamelCase', {
     let output = '', flag = false;
     for (let i = 0, l = str.length; i !== l; ++i) {
       const c = str.charAt(i);
-      ((c === ' ' || c === '-' || c === '_') && (flag = true))
+      ((c < 'A' || c > 'z' || (c > 'Z' && c < 'a')) && (flag = true))
       || (!flag && (output += c))
       || ((output += sep + c.toUpperCase()) && (flag = false))
     }
@@ -25,7 +25,7 @@ String.toKebabCase || Object.defineProperty(String, 'toKebabCase', {
     let output = '', tl = str.length;
     for (let i = 0, l = tl; i !== l; ++i) {
       const c = str.charCodeAt(i);
-      ((c === 32 || c === 45 || c === 95) && (output += sep))
+      ((c < 65 || c > 122 || (c > 90 && c < 97)) && (output += sep))
         || (c >= 65 && c <= 90 && (output += sep + String.fromCharCode(c + 32)))
         || (output += String.fromCharCode(c))
     }
