@@ -42,7 +42,7 @@ String.prototype.toKebabCase || Object.defineProperty(String.prototype, 'toKebab
 });
 
 // Function to decamelize, exactly the same as kebab casing.
-String.decamelize || Object.defineProperty(String, decamelize, {
+String.decamelize || Object.defineProperty(String, 'decamelize', {
   value: function(str, removeHeadSep = Infinity, removeTrailSep = Infinity) {
     return str.toKebabCase('_', removeHeadSep, removeTrailSep);
   }
