@@ -1,6 +1,6 @@
 'use strict';
 
-const DEFAULT_TIMEOUT = 200;
+const DEFAULT_TIMEOUT = 300;
 
 // Utility function to throttle a function call
 // involved in an intensive process.
