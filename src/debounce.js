@@ -6,10 +6,10 @@ const DEFAULT_TIMEOUT = 200;
 // involved in an intensive process.
 // Very useful for exmple with onmousemove and onscroll event.
 const debounce = (func, timeout = DEFAULT_TIMEOUT) => {
-  let timer;
-  return timeout > 0 && ((...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => { func.apply(this, args); }, timeout);
+  let timeoutId;
+  return timeout > 0 && (function(...args) {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(function() { func.apply(this || {}, args); }, timeout);
   }) || func;
 }
 

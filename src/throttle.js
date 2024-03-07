@@ -11,16 +11,16 @@ const throttle = (
   wait = false,
   queued = false
 ) => delay > 0 && (
-  (...args) => {
+  function(...args) {
     if (wait) {
       queued = true;
       return;
     }
 
-    func.apply(this, args);
+    func.apply(this || {}, args);
     wait = true;
-    setTimeout(() => {
-      queued && func.apply(this, args);
+    setTimeout(function() {
+      queued && func.apply(this || {}, args);
       queued = wait = false;
     }, delay);
   }
