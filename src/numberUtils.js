@@ -79,3 +79,12 @@ Number.prototype.toBase64 || Object.defineProperty(Number.prototype, 'toBase64',
     return Number.toBase64(this, ...args);
   }
 });
+
+Number.toSmartPrecision || Object.defineProperty(Number, 'toSmartPrecision', {
+  value: (x, coef = 1, d = 2) => isNaN(x) ? x : parseFloat((x = parseFloat(x) * coef) > 1 && x.toFixed(d) || x.toPrecision(d))
+});
+Number.prototype.toSmartPrecision || Object.defineProperty(Number.prototype, 'toSmartPrecision', {
+  value: function(...args) {
+    return Number.toSmartPrecision(this, ...args);
+  }
+});
