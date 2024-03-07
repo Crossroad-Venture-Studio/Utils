@@ -14,7 +14,7 @@ const debounce = (func, timeout = DEFAULT_TIMEOUT) => {
 }
 
 // Exports.
-Object.defineProperty(throttle, 'DEFAULT_TIMEOUT', {
+Object.defineProperty(debounce, 'DEFAULT_TIMEOUT', {
   value: DEFAULT_TIMEOUT
 });
 export default Object.freeze(Object.defineProperty(debounce, 'debounce', {
