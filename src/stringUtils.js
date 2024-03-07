@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Function to normalize string to Camel case.
 String.toCamelCase || Object.defineProperty(String, 'toCamelCase', {

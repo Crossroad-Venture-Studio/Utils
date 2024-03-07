@@ -1,6 +1,7 @@
 // Imports.
 import asyncify from './asyncify';
 import clock from './clock';
+import debounce from './debounce';
 import './functionUtils';
 import './numberUtils';
 import './objectUtils';
@@ -13,6 +14,7 @@ import throttle from './throttle';
 export default {
   asyncify,
   clock,
+  debounce,
   promisify,
   sleep,
   throttle
@@ -26,6 +28,7 @@ try {
   module.exports = {
     asyncify: require('./asyncify'),
     clock: require('./clock'),
+    debounce: require('./debounce'),
     promisify: require('./promisify'),
     sleep: require('./sleep'),
     throttle: require('./throttle')

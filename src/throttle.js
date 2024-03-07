@@ -17,10 +17,10 @@ const throttle = (
       return;
     }
 
-    func(...args);
+    func.apply(this, args);
     wait = true;
     setTimeout(() => {
-      queued && func(...args);
+      queued && func.apply(this, args);
       queued = wait = false;
     }, delay);
   }

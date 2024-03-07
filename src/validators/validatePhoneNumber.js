@@ -1,3 +1,5 @@
+'use strict';
+
 // Helper function to validate a US phone number string.
 // Example:
 // validatePhoneNumber('12345') will return false (i.e. not validated)

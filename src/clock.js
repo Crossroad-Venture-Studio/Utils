@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Helper function to get the clock.
 const clock = () => performance.now();

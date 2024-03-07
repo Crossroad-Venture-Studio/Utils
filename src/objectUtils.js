@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Helper function to assess if object is empty.
 const isEmpty = o => {

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Utility function to make a function async.
 const asyncify = func => (

@@ -1,3 +1,5 @@
+'use strict';
+
 // Define special characters and password format regular expression tests.
 // Password validation must pass the following:
 // - At least 1 uppercase letter

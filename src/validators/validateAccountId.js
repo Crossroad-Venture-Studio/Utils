@@ -1,3 +1,5 @@
+'use strict';
+
 // Helper function to validate an account id string.
 // Example:
 // validateAccounId('1234567890') will return false (i.e. not validated)

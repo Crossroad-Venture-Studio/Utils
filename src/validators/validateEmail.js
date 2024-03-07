@@ -1,3 +1,5 @@
+'use strict';
+
 // Helper function to validate an email string.
 // Example:
 // validateEmail('1234567890') will return false (i.e. not validated)

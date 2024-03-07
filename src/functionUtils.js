@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // Helper function that does noting.
 Function.void || Object.defineProperty(Function, 'void', {
