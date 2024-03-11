@@ -1,24 +1,16 @@
 // Imports.
-import asyncify from './asyncify';
-import clock from './clock';
-import debounce from './debounce';
 import './functionUtils';
 import './numberUtils';
 import './objectUtils';
-import promisify from './promisify';
-import sleep from './sleep';
 import './stringUtils';
-import throttle from './throttle';
 
 // Exports.
-export default {
-  asyncify,
-  clock,
-  debounce,
-  promisify,
-  sleep,
-  throttle
-};
+export { default as asyncify } from './asyncify';
+export { default as clock } from './clock';
+export { default as debounce } from './debounce';
+export { default as promisify } from './promisify';
+export { default as sleep } from './sleep';
+export { default as throttle } from './throttle';
 
 // Node.js exports.
 try {
