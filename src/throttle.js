@@ -1,11 +1,11 @@
-"use strict";
+'use strict';
 
-const DEFAULT_DELAY = 50;
+export const DEFAULT_DELAY = 50;
 
 // Utility function to throttle a function call
 // involved in an intensive process.
 // Very useful for exmple with onmousemove and onscroll event.
-const throttle = (
+export const throttle = (
   func,
   delay = DEFAULT_DELAY,
   wait = false,

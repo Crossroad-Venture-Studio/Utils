@@ -1,11 +1,11 @@
 'use strict';
 
-const DEFAULT_TIMEOUT = 300;
+export const DEFAULT_TIMEOUT = 300;
 
 // Utility function to throttle a function call
 // involved in an intensive process.
 // Very useful for exmple with onmousemove and onscroll event.
-const debounce = (func, timeout = DEFAULT_TIMEOUT) => {
+export const debounce = (func, timeout = DEFAULT_TIMEOUT) => {
   let timeoutId;
   return timeout > 0 && (function(...args) {
     clearTimeout(timeoutId);

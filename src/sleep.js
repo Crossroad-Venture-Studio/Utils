@@ -1,16 +1,16 @@
 'use strict';
 
-const DEFAULT_MS = 0;
+export const DEFAULT_MS = 0;
 
 // Helper function for sync sleep.
-const sleep = (milliseconds = DEFAULT_MS) => {
+export const sleep = (milliseconds = DEFAULT_MS) => {
   const t = Date.now();
   while (Date.now() - t < milliseconds);
   return true;
 }
 
 // Helper function for async sleep.
-const asyncSleep = async (milliseconds = DEFAULT_MS) => (
+export const asyncSleep = async (milliseconds = DEFAULT_MS) => (
   new Promise(resolve => setTimeout(resolve, milliseconds))
 );
 

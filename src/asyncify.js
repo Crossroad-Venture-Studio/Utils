@@ -1,7 +1,7 @@
 'use strict';
 
 // Utility function to make a function async.
-const asyncify = func => (
+export const asyncify = func => (
   typeof func === 'function'
   && !func.constructor.name.toLowerCase().includes('async')
   && async function(...args) { return func(...args); }

@@ -1,7 +1,7 @@
 'use strict';
 
 // Helper function to promisify a function.
-const promisify = (
+export const promisify = (
   f,
   passResolveToFuncAsLastArgument,
   makeAsync = f && f.constructor.name.toLowerCase().includes('async')

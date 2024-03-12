@@ -1,7 +1,7 @@
 'use strict';
 
 // Helper function to get the clock.
-const clock = () => performance.now();
+export const clock = () => performance.now();
 
 // Exports.
 export default Object.freeze(Object.defineProperty(clock, 'clock', {
