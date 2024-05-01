@@ -78,6 +78,31 @@ String.prototype.toPascalCase || Object.defineProperty(String.prototype, 'toPasc
   }
 });
 
+// Function to title case.
+String.toTitleCase || Object.defineProperty(String, 'toTitleCase', {
+  value: function(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+});
+String.prototype.toTitleCase || Object.defineProperty(String.prototype, 'toTitleCase', {
+  value: function(...args) {
+    return String.toTitleCase(this, ...args);
+  }
+});
+
+// Function to capitalize.
+const spRe = /\s+/g
+String.toCapitalCase || Object.defineProperty(String, 'toCapitalCase', {
+  value: function(str) {
+    return str.split(spRe).map(s => s.charAt(0).toUpperCase() + s.slice(1)).join(' ');
+  }
+});
+String.prototype.toCapitalCase || Object.defineProperty(String.prototype, 'toCapitalCase', {
+  value: function(...args) {
+    return String.toCapitalCase(this, ...args);
+  }
+});
+
 // Function to transform into socket header property format.
 String.toSocketHeaderKey || Object.defineProperty(String, 'toSocketHeaderKey', {
   value: function(str) {
