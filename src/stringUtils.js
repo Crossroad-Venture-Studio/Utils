@@ -103,6 +103,18 @@ String.prototype.toCapitalCase || Object.defineProperty(String.prototype, 'toCap
   }
 });
 
+// Function to capitalize.
+String.toQuote || Object.defineProperty(String, 'toQuote', {
+  value: function(str, startQuote = '❝ ', endQuote = ' ❞') {
+    return `${startQuote}${str}${endQuote}`;
+  }
+});
+String.prototype.toQuote || Object.defineProperty(String.prototype, 'toQuote', {
+  value: function(...args) {
+    return String.toQuote(this, ...args);
+  }
+});
+
 // Function to transform into socket header property format.
 String.toSocketHeaderKey || Object.defineProperty(String, 'toSocketHeaderKey', {
   value: function(str) {
