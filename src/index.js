@@ -8,6 +8,7 @@ import './stringUtils';
 export { default as asyncify } from './asyncify';
 export { default as clock } from './clock';
 export { default as debounce } from './debounce';
+export { default as getUrlString } from './getUrlString';
 export { default as path } from './path';
 export { default as promisify } from './promisify';
 export { default as sleep } from './sleep';
@@ -22,6 +23,7 @@ try {
     asyncify: require('./asyncify'),
     clock: require('./clock'),
     debounce: require('./debounce'),
+    getUrlString: require('./getUrlString'),
     path: require('./path'),
     promisify: require('./promisify'),
     sleep: require('./sleep'),

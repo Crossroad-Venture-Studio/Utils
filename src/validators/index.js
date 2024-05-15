@@ -3,6 +3,7 @@ export { default as validateEmail } from './validateEmail';
 export { default as validatePhoneNumber } from './validatePhoneNumber';
 export { default as validateAccountId } from './validateAccountId';
 export { validatePassword, getPasswordFormatErrors } from './validatePassword';
+export * from './validateProfileUrl';
 
 // Node.js exports.
 try {
@@ -11,6 +12,7 @@ try {
     validateEmail: require('./validateEmail'),
     validatePhoneNumber: require('./validatePhoneNumber'),
     validateAccountId: require('./validateAccountId'),
+    ...require('./validateProfileUrl'),
     validatePassword,
     getPasswordFormatErrors
   }
