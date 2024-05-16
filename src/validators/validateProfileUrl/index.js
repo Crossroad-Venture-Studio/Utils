@@ -1,3 +1,4 @@
+export { default as validateDiscordProfileUrl } from './validateDiscordProfileUrl';
 export { default as validateFacebookProfileUrl } from './validateFacebookProfileUrl';
 export { default as validateInstagramProfileUrl } from './validateInstagramProfileUrl';
 export { default as validateLinkedInProfileUrl } from './validateLinkedInProfileUrl';
@@ -10,7 +11,9 @@ export { default as validateTikTokProfileUrl } from './validateTikTokProfileUrl'
 export { default as validateWeChatProfileUrl } from './validateWeChatProfileUrl';
 export { default as validateWhatsAppProfileUrl } from './validateWhatsAppProfileUrl';
 export { default as validateXProfileUrl } from './validateXProfileUrl';
+export { default as validateYoutubeProfileUrl } from './validateYoutubeProfileUrl';
  
+import validateDiscordProfileUrl from './validateDiscordProfileUrl';
 import validateFacebookProfileUrl from './validateFacebookProfileUrl';
 import validateInstagramProfileUrl from './validateInstagramProfileUrl';
 import validateLinkedInProfileUrl from './validateLinkedInProfileUrl';
@@ -23,10 +26,12 @@ import validateTikTokProfileUrl from './validateTikTokProfileUrl';
 import validateWeChatProfileUrl from './validateWeChatProfileUrl';
 import validateWhatsAppProfileUrl from './validateWhatsAppProfileUrl';
 import validateXProfileUrl from './validateXProfileUrl';
+import validateYoutubeProfileUrl from './validateYoutubeProfileUrl';
 
 export const validateProfileUrl = url => {
   try {
-    return require('./validateFacebookProfileUrl')(url)
+    return require('.validateDiscordProfileUrl')(url)
+      || require('./validateFacebookProfileUrl')(url)
       || require('./validateInstagramProfileUrl')(url)
       || require('./validateLinkedInProfileUrl')(url)
       || require('./validateMessengerProfileUrl')(url)
@@ -37,9 +42,11 @@ export const validateProfileUrl = url => {
       || require('./validateTikTokProfileUrl')(url)
       || require('./validateWeChatProfileUrl')(url)
       || require('./validateWhatsAppProfileUrl')(url)
-      || require('./validateXProfileUrl')(url);
+      || require('./validateXProfileUrl')(url)
+      || require('./validateYoutubeProfileUrl')(url);
   } catch {
-    return validateFacebookProfileUrl(url)
+    return validateDiscordProfileUrl(url)
+    || validateFacebookProfileUrl(url)
     || validateInstagramProfileUrl(url)
     || validateLinkedInProfileUrl(url)
     || validateMessengerProfileUrl(url)
@@ -50,13 +57,15 @@ export const validateProfileUrl = url => {
     || validateTikTokProfileUrl(url)
     || validateWeChatProfileUrl(url)
     || validateWhatsAppProfileUrl(url)
-    || validateXProfileUrl(url);
+    || validateXProfileUrl(url)
+    || validateYoutubeProfileUrl(url);
   }
 };
 
 // Node.js exports.
 try {
   module.exports = validateProfileUrl;
+  module.exports.validateDiscordProfileUrl = validateDiscordProfileUrl;
   module.exports.validateFacebookProfileUrl = validateFacebookProfileUrl;
   module.exports.validateInstagramProfileUrl = validateInstagramProfileUrl;
   module.exports.validateLinkedInProfileUrl = validateLinkedInProfileUrl;
@@ -69,6 +78,7 @@ try {
   module.exports.validateWeChatProfileUrl = validateWeChatProfileUrl;
   module.exports.validateWhatsAppProfileUrl = validateWhatsAppProfileUrl;
   module.exports.validateXProfileUrl = validateXProfileUrl;
+  module.exports.validateYoutubeProfileUrl = validateYoutubeProfileUrl;
 } catch {}
 
 export default Object.freeze(Object.defineProperty(validateProfileUrl, 'validateProfileUrl', {
