@@ -30,7 +30,7 @@ import validateYoutubeProfileUrl from './validateYoutubeProfileUrl';
 
 export const validateProfileUrl = url => {
   try {
-    return require('.validateDiscordProfileUrl')(url)
+    return require('./validateDiscordProfileUrl')(url)
       || require('./validateFacebookProfileUrl')(url)
       || require('./validateInstagramProfileUrl')(url)
       || require('./validateLinkedInProfileUrl')(url)
