@@ -78,6 +78,49 @@ String.prototype.toPascalCase || Object.defineProperty(String.prototype, 'toPasc
   }
 });
 
+// Function to hastagify.
+String.toHashTagCase || Object.defineProperty(String, 'toHashTagCase', {
+  value: function(str, sep = '') {
+    let output = '', flag = false;
+    for (let i = 0, l = str.length; i !== l; ++i) {
+      const c = str.charAt(i);
+      ((c < '0' || c > 'z' || (c > '9' && c < 'A') || (c > 'Z' && c < 'a')) && (flag = true))
+      || (!flag && (output += c))
+      || ((output += sep + c.toUpperCase()) && (flag = false))
+    }
+    return output;
+  }
+});
+String.prototype.toHashTagCase || Object.defineProperty(String.prototype, 'toHashTagCase', {
+  value: function(...args) {
+    return String.toHashTagCase(this, ...args);
+  }
+});
+
+// Function to hastagify.
+String.toUserIdCase || Object.defineProperty(String, 'toUserIdCase', {
+  value: function(str) {
+    return str.toHashTagCase('-').toLowerCase().replace(/^\-+|\-+$|\-\-+/g, '');
+  }
+});
+String.prototype.toUserIdCase || Object.defineProperty(String.prototype, 'toUserIdCase', {
+  value: function(...args) {
+    return String.toUserIdCase(this, ...args);
+  }
+});
+
+// Function to hastagify.
+String.toHashTag || Object.defineProperty(String, 'toHashTag', {
+  value: function(str) {
+    return '#' + str.toHashTagCase();
+  }
+});
+String.prototype.toHashTag || Object.defineProperty(String.prototype, 'toHashTag', {
+  value: function(...args) {
+    return String.toHashTag(this, ...args);
+  }
+});
+
 // Function to title case.
 String.toTitleCase || Object.defineProperty(String, 'toTitleCase', {
   value: function(str) {
