@@ -1,30 +1,36 @@
 export const Path = {};
 
-export const urldomain = Path.urldomain = url => {
+export const urlstring = Path.urlstring = url => {
   url || (url = '');
   try {
     if (url instanceof URL) url = url.hostname;
   } catch {}
-
-  url = url.replace(/^(https|http|ftp)\:\/\/(www\.|)/i, '');
-  url = url.slice(0, Math.max(url.indexOf('/') || 0, 0));
-  return url.trim();
+  return url.replace(/\s+/g, '');
 }
 
+export const urladdress = Path.urladdress = url => (
+  urlstring(url).replace(/^(https|http|ftp)\:\/\/(www\.|)/i, '')
+);
+
+export const urlhost = Path.urlhost = url => (
+  urladdress(url).slice(0, Math.max(url.indexOf('/') || 0, 0))
+);
+
 export const urlbasename = Path.urlbasename = url => (
-  urldomain(url).slice(0, Math.max(url.lastIndexOf('.') || 0, 0))
+  urlhost(url).slice(0, Math.max(url.lastIndexOf('.') || 0, 0))
 )
 
 export const urlname = Path.urlname = url => urlbasename(url).split('.').reverse().join(' ');
 
-export const urlpage = Path.urlpage = url => {
-  url || (url = '');
-  try {
-    if (url instanceof URL) url = url.hostname;
-  } catch {}
-  url = url.replace(/^(https|http|ftp)\:\/\/(www\.|)/i, '');
-  return url.slice(Math.max(url.indexOf('/') || 0, 0), Math.min(Math.max(url.indexOf('?') || 0, 0), Math.max(url.indexOf('#') || 0, 0)) || url.length).trim();
-};
+export const urlpage = Path.urlpage = url => (
+  urladdress(url).slice(
+    Math.max(url.indexOf('/') || 0, 0),
+    Math.min(
+      Math.max(url.indexOf('?') || 0, 0),
+      Math.max(url.indexOf('#') || 0, 0)
+    ) || url.length
+  )
+);
 
 // Deafult export.
 export default Object.freeze(Path);
