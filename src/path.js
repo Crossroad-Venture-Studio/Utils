@@ -13,17 +13,17 @@ export const urladdress = Path.urladdress = url => (
 );
 
 export const urlhost = Path.urlhost = url => (
-  urladdress(url).slice(0, Math.max(url.indexOf('/') || 0, 0))
+  (url = urladdress(url)).slice(0, Math.max(url.indexOf('/') || 0, 0))
 );
 
 export const urlbasename = Path.urlbasename = url => (
-  urlhost(url).slice(0, Math.max(url.lastIndexOf('.') || 0, 0))
+  (url = urlhost(url)).slice(0, Math.max(url.lastIndexOf('.') || 0, 0))
 )
 
 export const urlname = Path.urlname = url => urlbasename(url).split('.').reverse().join(' ');
 
 export const urlpage = Path.urlpage = url => (
-  urladdress(url).slice(
+  (url = urladdress(url)).slice(
     Math.max(url.indexOf('/') || 0, 0),
     Math.min(
       Math.max(url.indexOf('?') || 0, 0),
